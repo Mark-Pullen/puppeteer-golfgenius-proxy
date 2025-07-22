@@ -1,5 +1,7 @@
 #!/bin/bash
 
-# Force Puppeteer to download Chromium manually during Render build
+# Install dependencies
 npm install
-npx puppeteer browsers install chromium
+
+# Explicitly trigger Puppeteer to install Chromium
+node node_modules/puppeteer/install.js
