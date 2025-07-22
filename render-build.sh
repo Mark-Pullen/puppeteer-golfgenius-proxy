@@ -1,14 +1,14 @@
 #!/bin/bash
 
+set -e  # ⛑️ exit on any failure
+
 echo "📦 Installing dependencies..."
 npm install
 
 echo "🧊 Manually installing Chromium via Puppeteer..."
-node <<EOF
-  const puppeteer = require('puppeteer');
-  (async () => {
-    const browserFetcher = puppeteer.createBrowserFetcher();
-    const revisionInfo = await browserFetcher.download('1108766');
-    console.log('✅ Chromium downloaded to:', revisionInfo.executablePath);
-  })();
-EOF
+node node_modules/puppeteer/install.js
+
+echo "🚀 Manually downloading Chromium rev 1108766..."
+node install-chromium.js
+
+echo "✅ Build script completed!"
