@@ -4,4 +4,4 @@ echo "Installing dependencies..."
 npm install
 
 echo "Manually installing Chromium..."
-npx puppeteer install
+node node_modules/puppeteer/install.js
