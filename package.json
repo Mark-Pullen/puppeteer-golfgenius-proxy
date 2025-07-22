@@ -1,2 +1,13 @@
-npm uninstall puppeteer-core
-npm install puppeteer@19.11.1
+{
+  "name": "puppeteer-golfgenius-proxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "puppeteer": "^19.11.1"
+  }
+}
