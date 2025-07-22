@@ -14,7 +14,8 @@ app.get('/api/fetchLeaderboard', async (req, res) => {
 
   try {
     const browser = await puppeteer.launch({
-      headless: 'new',
+      executablePath: '/tmp/chromium/chrome-linux/chrome', // 👈 Explicit path to Chromium
+      headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
@@ -28,10 +29,13 @@ app.get('/api/fetchLeaderboard', async (req, res) => {
 
     res.status(200).send(tableHTML);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Puppeteer failed', details: err.message });
+    console.error('❌ Puppeteer error:', err);
+    res.status(500).json({
+      error: 'Puppeteer failed',
+      details: err.message
+    });
   }
 });
 
 const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
