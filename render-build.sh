@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Install dependencies
+echo "Installing dependencies..."
 npm install
 
-# Explicitly trigger Puppeteer to install Chromium
-node node_modules/puppeteer/install.js
+echo "Manually installing Chromium..."
+npx puppeteer install
