@@ -1,7 +1,7 @@
 {
   "name": "puppeteer-golfgenius-proxy",
   "version": "1.0.0",
-  "description": "Puppeteer backend to extract Golf Genius leaderboards",
+  "description": "Serverless backend using Puppeteer to extract Golf Genius leaderboards",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -11,7 +11,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "puppeteer": "^24.14.0"
+    "puppeteer": "19.11.1"
   },
   "engines": {
     "node": ">=16.x"
