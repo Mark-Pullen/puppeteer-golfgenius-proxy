@@ -1,19 +1,2 @@
-{
-  "name": "puppeteer-golfgenius-proxy",
-  "version": "1.0.0",
-  "description": "Serverless backend using Puppeteer to extract Golf Genius leaderboards",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "author": "Mark Pullen",
-  "license": "MIT",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "puppeteer": "19.11.1"
-  },
-  "engines": {
-    "node": ">=16.x"
-  }
-}
+npm uninstall puppeteer-core
+npm install puppeteer@19.11.1

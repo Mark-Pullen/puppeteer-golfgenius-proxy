@@ -14,8 +14,7 @@ app.get('/api/fetchLeaderboard', async (req, res) => {
 
   try {
     const browser = await puppeteer.launch({
-      executablePath: '/tmp/chromium/chrome-linux/chrome', // 👈 Explicit path to Chromium
-      headless: true,
+      headless: 'new',
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
@@ -30,10 +29,7 @@ app.get('/api/fetchLeaderboard', async (req, res) => {
     res.status(200).send(tableHTML);
   } catch (err) {
     console.error('❌ Puppeteer error:', err);
-    res.status(500).json({
-      error: 'Puppeteer failed',
-      details: err.message
-    });
+    res.status(500).json({ error: 'Puppeteer failed', details: err.message });
   }
 });
 
